@@ -5,6 +5,7 @@ const app = express();
 const server = require('http').createServer(app);
 const cors = require("cors");
 const authRouter = require("./src/routers/authRouter.js");
+require("dotenv").config();
 
 
 //database

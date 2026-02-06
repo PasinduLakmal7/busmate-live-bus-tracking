@@ -1,6 +1,4 @@
-const Objection = require("objection");
-
-const {Model} = require(Objection)
+const { Model } = require('objection');
 
 class Users extends Model {
     static get tableName() {

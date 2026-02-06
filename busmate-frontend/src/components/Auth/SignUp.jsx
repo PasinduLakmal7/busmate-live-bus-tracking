@@ -25,7 +25,7 @@ const Register = () => {
                 action.resetForm();
                 fetch("http://localhost:4000/auth/register", {
                     method: "POST",
-                    Credential: "include",
+                    credential: "include",
                     headers: {
                         "Content-Type": "application/json"
                     },
