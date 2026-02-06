@@ -5,7 +5,6 @@ import {
 import { EmailIcon, LockIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from 'react-router-dom';
 import { Formik } from 'formik';
-import * as Yup from 'yup';
 import TextField from './TextField';
 import { formSchema } from "@busmate/common";
 

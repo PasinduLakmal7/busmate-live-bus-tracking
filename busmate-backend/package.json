@@ -4,18 +4,28 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    
+    "migrate": "npx knex migrate:latest --knexfile ./db/knexfile.js",
     "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "down": "npx knex migrate:down --knexfile ./db/knexfile.js",
+    "seed": "npx knex seed:run --knexfile ./db/knexfile.js",
+    "make-seed": "knex seed:make --knexfile ./db/knexfile.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@busmate/common": "1.0.0",
+    "bcrypt": "^6.0.0",
     "cors": "^2.8.6",
+    "dotenv": "^17.2.4",
     "express": "^5.2.1",
     "helmet": "^8.1.0",
-    "socket.io": "^4.8.3",
-    "@busmate/common": "1.0.0"
+    "knex": "^3.1.0",
+    "objection": "^3.1.5",
+    "pg": "^8.18.0",
+    "socket.io": "^4.8.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"

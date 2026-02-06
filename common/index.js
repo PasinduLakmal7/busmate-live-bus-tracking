@@ -1,12 +1,6 @@
-const Yup = require("yup");
+import * as Yup from "yup";
 
-const formSchema = Yup.object({
-    email: Yup.string()
-        .required("Email required")
-        .email("Invalid email format"),
-    password: Yup.string()
-        .required("Password required")
-        .min(6, "Password too short"),
+export const formSchema = Yup.object({
+  email: Yup.string().required("Email required").email("Invalid email format"),
+  password: Yup.string().required("Password required").min(6, "Password too short"),
 });
-
-module.exports = { formSchema }

@@ -5,9 +5,8 @@ import {
 import { EmailIcon, LockIcon, InfoOutlineIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from 'react-router-dom';
 import { Formik } from 'formik';
-import * as Yup from 'yup';
 import TextField from './TextField';
-const {formSchema} = require("@busmate/common")
+import { formSchema } from "@busmate/common";
 
 
 const Register = () => {
@@ -25,26 +24,26 @@ const Register = () => {
                 const vals = { ...values }
                 action.resetForm();
                 fetch("http://localhost:4000/auth/register", {
-                    method:"POST",
+                    method: "POST",
                     Credential: "include",
                     headers: {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify(vals),
                 })
-                .catch(error=>{
-                    return;
-                })
-                .then(res=>{
-                    if(!res || !res.ok || res.status >= 400) {
+                    .catch(error => {
                         return;
-                    }
-                    return res.json();
-                })
-                .then(data=> {
-                    if(!data) return;
-                    console.log(data)
-                });
+                    })
+                    .then(res => {
+                        if (!res || !res.ok || res.status >= 400) {
+                            return;
+                        }
+                        return res.json();
+                    })
+                    .then(data => {
+                        if (!data) return;
+                        console.log(data)
+                    });
             }}
         >
             {(formik) => (

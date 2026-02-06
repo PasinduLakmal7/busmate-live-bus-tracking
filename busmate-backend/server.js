@@ -6,6 +6,14 @@ const server = require('http').createServer(app);
 const cors = require("cors");
 const authRouter = require("./src/routers/authRouter.js");
 
+
+//database
+const dbSetup = require('./db/db-setup.js')
+const Users = require('./db/models/usersModel.js')
+dbSetup();
+
+
+
 const io = new Server(server, {
     cors: {
         origin: 'http://localhost:5173',
