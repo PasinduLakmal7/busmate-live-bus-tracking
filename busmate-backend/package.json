@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "scripts": {
-    
-    "migrate": "npx knex migrate:latest --knexfile ./db/knexfile.js",
+  "scripts": {    
     "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "make-migrate": "npx knex migrate:make --knexfile ./db/knexfile.js",
+    "migrate": "npx knex migrate:latest --knexfile ./db/knexfile.js",
     "down": "npx knex migrate:down --knexfile ./db/knexfile.js",
     "seed": "npx knex seed:run --knexfile ./db/knexfile.js",
     "make-seed": "knex seed:make --knexfile ./db/knexfile.js"
